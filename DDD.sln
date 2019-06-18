@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Renting", "Renting\Renting.csproj", "{F18D42C1-9315-4F06-A57D-A39F7AB54C28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Renting", "src\Renting\Renting.csproj", "{F18D42C1-9315-4F06-A57D-A39F7AB54C28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment", "Payment\Payment.csproj", "{13015382-FC84-42DE-AADA-5435990CEF6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payment", "src\Payment\Payment.csproj", "{13015382-FC84-42DE-AADA-5435990CEF6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "EventBus\EventBus.csproj", "{1E60592E-9A07-4269-802B-4E003F278984}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBus", "src\EventBus\EventBus.csproj", "{1E60592E-9A07-4269-802B-4E003F278984}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agreement", "Agreement\Agreement.csproj", "{FDB9F82B-D614-411F-A2DF-F8F5764D7248}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agreement", "src\Agreement\Agreement.csproj", "{FDB9F82B-D614-411F-A2DF-F8F5764D7248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification", "Notification\Notification.csproj", "{530C5018-5A41-484F-A438-6B1505DC0D73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification", "src\Notification\Notification.csproj", "{530C5018-5A41-484F-A438-6B1505DC0D73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discounts", "Discounts\Discounts.csproj", "{DC79F60F-ACA0-4501-85D6-8D2B063D45D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discounts", "src\Discounts\Discounts.csproj", "{DC79F60F-ACA0-4501-85D6-8D2B063D45D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
