@@ -15,7 +15,7 @@ namespace Renting.Domain
 
         public static Period From(DateTime from, DateTime to)
         {
-            if (to > from)
+            if (to < from)
             {
                 throw new InvalidPeriodException(from, to);
             }

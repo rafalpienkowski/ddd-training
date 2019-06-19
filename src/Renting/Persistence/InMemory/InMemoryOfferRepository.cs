@@ -6,16 +6,16 @@ namespace Renting.Persistence.InMemory
 {
     public class InMemoryOfferRepository : IOfferRepository
     {
-        private readonly List<Offer> _offers = new List<Offer>();
+        private static readonly List<Offer> Offers = new List<Offer>();
         
         public Offer Get(OfferId offerId)
         {
-            return _offers.SingleOrDefault(o => o.Id.Equals(offerId));
+            return Offers.SingleOrDefault(o => o.Id.Equals(offerId));
         }
 
         public void Save(Offer offer)
         {
-            _offers.Add(offer);
+            Offers.Add(offer);
         }
     }
 }

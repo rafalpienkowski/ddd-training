@@ -36,7 +36,7 @@ namespace Renting.Application.Services
             _draftRepository.Save(draft);
         }
 
-        public void Create(DateTime from, DateTime to, string apartmentIdString, decimal priceDecimal, string ownerIdString, decimal depositDecimal)
+        public OfferId Create(DateTime from, DateTime to, string apartmentIdString, decimal priceDecimal, string ownerIdString, decimal depositDecimal)
         {
             var apartmentId = ApartmentId.From(apartmentIdString);
             var apartment = _apartmentRepository.Get(apartmentId);
@@ -48,6 +48,8 @@ namespace Renting.Application.Services
             var offer = OfferFactory.Create(apartment, ownerId, period, pricePerDay,deposit);
 
             _offerRepository.Save(offer);
+
+            return offer.Id;
         }
     }
 }
