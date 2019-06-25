@@ -21,9 +21,7 @@ namespace Discounts.Application.Service
         {
             var customerId = CustomerId.From(tenantId);
             var customer = _customerRepository.Get(customerId);
-
             var discount = _discountCalculationService.Calculate(customer);
-            
             return Discount.From(discount.ToInt());
         }
     }

@@ -22,7 +22,7 @@ namespace Renting.Application.Services
             _discountService = discountService;
         }
 
-        public void Choose(string offerIdString, string tenantIdString, DateTime from, DateTime to)
+        public DraftId Choose(string offerIdString, string tenantIdString, DateTime from, DateTime to)
         {
             var offerId = OfferId.From(offerIdString);
             var offer = _offerRepository.Get(offerId);
@@ -30,10 +30,12 @@ namespace Renting.Application.Services
             var period = Period.From(from, to);
 
             var discount = _discountService.CalculateDiscount(tenantIdString, offerIdString, from, to);
-            var draftFactory = new DraftFactory(discount);
+            var draftFactory = new DraftFactory(discount, new DefaultDraftNumberGenerator());
             var draft = offer.Choose(tenantId, period, draftFactory);
             
             _draftRepository.Save(draft);
+
+            return draft.Id;
         }
 
         public OfferId Create(DateTime from, DateTime to, string apartmentIdString, decimal priceDecimal, string ownerIdString, decimal depositDecimal)

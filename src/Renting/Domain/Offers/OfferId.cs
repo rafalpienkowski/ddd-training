@@ -23,5 +23,10 @@ namespace Renting.Domain.Offers
             var p = (OfferId)obj;  
             return Id == p.Id; 
         }
+
+        public override string ToString()
+        {
+            return Id;
+        }
     }
 }

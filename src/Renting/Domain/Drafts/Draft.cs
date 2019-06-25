@@ -1,3 +1,4 @@
+using System;
 using Renting.Domain.Agreements;
 using Renting.Domain.Apartments;
 using Renting.Domain.Events;
@@ -7,13 +8,13 @@ namespace Renting.Domain.Drafts
     public class Draft
     {
         public DraftId Id { get; }
-        private OwnerId _ownerId;
-        private TenantId _tenantId;
-        private Apartment _apartment;
-        private Period _period;
-        private Price _pricePerDay;
-        private AgreementNumber _agreementNumber;
-        private Price _deposit;
+        private readonly OwnerId _ownerId;
+        private readonly TenantId _tenantId;
+        private readonly Apartment _apartment;
+        private readonly Period _period;
+        private readonly Price _pricePerDay;
+        private readonly AgreementNumber _agreementNumber;
+        private readonly Price _deposit;
         private readonly IEventRegistry _eventRegistry;
         
         private Price TotalPrice
@@ -27,6 +28,7 @@ namespace Renting.Domain.Drafts
 
         public Draft(OwnerId ownerId, TenantId tenantId, Apartment apartment, Period period, Price pricePerDay, AgreementNumber agreementNumber, Price deposit)
         {
+            Id = DraftId.From(Guid.NewGuid().ToString());
             _ownerId = ownerId;
             _tenantId = tenantId;
             _apartment = apartment;

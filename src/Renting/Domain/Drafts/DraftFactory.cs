@@ -9,9 +9,10 @@ namespace Renting.Domain.Drafts
         private readonly IDraftNumberGenerator _draftNumberGenerator;
         private readonly Discount _discount;
 
-        public DraftFactory(Discount discount)
+        public DraftFactory(Discount discount, IDraftNumberGenerator draftNumberGenerator)
         {
             _discount = discount;
+            _draftNumberGenerator = draftNumberGenerator;
         }
 
         public Draft Create(OwnerId ownerId, TenantId tenantId, Apartment apartment, Period period, Price pricePerDay, OfferId offerId, Price deposit)
